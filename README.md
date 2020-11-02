@@ -3,7 +3,7 @@
 Installation steps:
 
 1. Import the database using the schema file found here: 
-   <pre>db/sugar-live-demo-chat.sql</pre>
+   <pre>db/sugarlive-demo-chat-db.sql</pre>
 2. Create an environment .env file in the root directory with the following data:
    <pre>AWS_CONTACT_FLOW_ID=""
    AWS_INSTANCE_ID=""
