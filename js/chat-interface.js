@@ -95,9 +95,9 @@ function initiateChat() {
 
     $('.section-chat').toggle();
 
-    var contactFlowId = ""; // TODO: Fill in
-    var instanceId = ""; // TODO: Fill in
-    var apiGatewayEndpoint = ""; // TODO: Fill in with the API Gateway endpoint created by your CloudFormation template
+    var contactFlowId = "0e96d53a-f5c9-4706-8bc4-52b5452465fa"; // TODO: Fill in
+    var instanceId = "3e55a1d2-f60f-44e1-828f-b5b88eec4f7e"; // TODO: Fill in
+    var apiGatewayEndpoint = "https://d7xw6yx2b2.execute-api.us-west-2.amazonaws.com/Prod"; // TODO: Fill in with the API Gateway endpoint created by your CloudFormation template
 
     connect.ChatInterface.initiateChat({
         name: 'Awesome customer',
@@ -124,7 +124,6 @@ function successHandler(chatSession) {
     window.chatSession = chatSession;
     $('#section-chat').fadeIn(400);
     chatSession.onChatDisconnected(function(data) {
-        debugger;
         $.ajax({
             method: "DELETE",
             url: `aws-be.php?contact_id=${chatSession.contactId}`,
