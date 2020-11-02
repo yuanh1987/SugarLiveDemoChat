@@ -1,5 +1,4 @@
 <?php
-//namespace SugarLiveDemoChat;
 
 class SugarLiveDemoChatDatabase
 {

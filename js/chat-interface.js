@@ -11,11 +11,17 @@ $(document).ready((a) => {
         containerId: 'root' // This is the id of the container where you want the widget to reside
     });
 
+    $('.ecw-close-button').on('click', function () {
+        $('.ecw-launcher-container').hide();
+    })
+
     $('#menu-chat').on('click', function() {
         $('#ChangeSC').addClass('initialized');
     });
 
     $('#widgetButton').on('click', function() {
+        $('.ecw-launcher-container').hide();
+
         if (!Cookies.get('username')) {
             window.$('#exampleModal').modal('show');
         } else {
@@ -63,7 +69,6 @@ $(document).ready((a) => {
             .done(function( msg ) {
                 var contacts = JSON.parse(msg);
                 var contactRow;
-                console.log(contacts.length);
                 if (contacts.length != 0){
                     $("#classTable tbody").find('tr').remove();
                     contacts.forEach(function (item) {
@@ -123,8 +128,8 @@ function successHandler(chatSession) {
 
     window.chatSession = chatSession;
     $('#section-chat').fadeIn(400);
+
     chatSession.onChatDisconnected(function(data) {
-        debugger;
         $.ajax({
             method: "DELETE",
             url: `aws-be.php?contact_id=${chatSession.contactId}`,
