@@ -1,0 +1,10 @@
+{
+  "name": "sugar-live-demo-chat-be",
+  "version": "0.0.1",
+  "description": "JavaScript API for handling cookies",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "js-cookie": "2.2.1"
+  }
+}

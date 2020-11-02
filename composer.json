@@ -1,0 +1,11 @@
+{
+  "require": {
+    "aws/aws-sdk-php": "3.158",
+    "vlucas/phpdotenv": "5.2.0"
+  },
+  "autoload": {
+    "files": [
+      "./db/SugarLiveDemoChatDatabase.php"
+    ]
+  }
+}

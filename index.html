@@ -1,0 +1,230 @@
+<html>
+<head>
+<!--    <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAADMklEQVQ4jX2TX2xTZQDFjzEkPvlgTIxPPnSlbm1ZIoqJGJld121fu4KbFRIyILowHkh0LkNkf/q1jdOwZYKuyNreFlwgYUomsdeS6cCJWcCUtbf7k7jNiHHBxBADQrDbvb3Hh+k0Kp7k5Lz8fo8H+GeGsusQPl8JqUYg1UVItYCQ2oHImBUjvP9f/FrkxYcRUrdCqich1R8h0yUE00QwTUhVh0wvQKpRyLQb8rMH/xLDmafQk+6GTGch1eKadK9K9Q5k+iv0qG2IfF4ORHM/o2/CQDjz/2IwTQQ/Xd3IeaL/koFj+RyQnC8h+S0RmzZw5LKOt78wIP8G/ylKlXhn3MDRb3TE5lad1PwPwIdLzVBmziGWKyK1QCTnTQxmicMXiXCGiGSI/gni2BSRWjCRnCfiV39Fcm4YJ5d84DZr0w2/9aMvmzcX2w68RgyMEsoMkVogYjNEfJZILRJxjeg7Tfl6K6/s3HTrZsP6BF9cXw2225f5ss00m8qMZWExr71QzuHWBrpDA0T0EvH+OAM9EY6+4uF1v40rPkuJgTKDLTay3f4d2O24xU67yYP2EveX69xpNVb8Ft70lXFq+0YWXqrkba+FxjaLyWabzlcrdB60m+xykN2OWbDT8UxROo/flc677HKQh+wm2yvIvTYagTIa263kvsfJjgqyc1W8HXL+UpIbevmG04kdZ2oPVQ1VT+4YfG6lf2ATc29tIHscZKedfPOPdtmpBx2c7K1kZOBpNkarfnPFqsd2na1rxXtX6tk1XmvuPuPWPXF3yRN9nvuPbObI4Sf4U9jJa2EnT/RtZMvRZ+n6wGXWKe5Sy8c1euhCLaNZsYRkQSwqmliJ5QT7J0WpLe3Rm4ZrjKohl7l1cAt9g1voGnKXAqfc+oGMR3/3cn0pnhdMFrzLiuadQGJOPKZovl2K5j2XLHhvKJpgNFvP8IU6o+Vsjb5vtEbvnag3jl8VTBaEqRTE9YQmTqXy3sbT0/5H1i6R+n7PA8q0/0ml4A0rmphSCqKYyAsm8oJJTdxJ5MXXiiY6Tsw22LPcu+6epyR53/Bc46NKQexJ5MVYQvN+ksp7G0dmAw/9F/87RGQNXOT2pSYAAAAASUVORK5CYII=" type="image/x-icon" />-->
+    <link rel="shortcut icon" href="pics/rocking_horse.png" type="image/x-icon" />
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="node_modules/js-cookie/src/js.cookie.js"></script>
+
+    <script src="js/amazon-connect-chat-interface.js"></script>
+    <script src="js/chat-interface.js"></script>
+
+
+    <style>
+        <!--
+        body {
+            background-color: black;
+            
+        }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .mygear {
+        height: 60px;
+      }        
+        -->
+    </style>
+    <link href="css/navbar-top-fixed.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <script>
+        var sc_username = Cookies.get('username');
+        var SC_list = {
+            'adam.frank': 'Adam Frank',
+            'bdickinson': 'Andy Yeates',
+            'cschiller': 'Claus Schiller',
+            'dleeman': 'Daniel Leeman',
+            'ddeolalikar': 'Deepak Deolalikar',
+            'erik.tavenner': 'Erik Tavenner',
+            'franklin.delacruz': 'Franklin De La Cruz',
+            'gneumann': 'Georg Neumann',
+            'jwilliamson': 'Jono Williamson',
+            'msuen': 'Michael Suen',
+            'msadowski': 'Morgan Sadowski',
+            'onepomiachty': 'Olivier Nepomiachty',
+            'rolivares': 'Roberto Olivares',
+            'wjohnson': 'Wayne Johnson',
+            'aturdasan': 'Andra Turdasan',
+            'ppas': 'Paul Pas',
+            'dileni': 'Donuc Ileni',
+            'marco.lagueux': 'Marco Lagueux',
+            'mschneider': 'Martin Schneider',
+            'chicks': 'Charles Hicks',
+            'clint': 'Clint Oram'
+        };
+    </script>
+</head>
+<body>
+
+<header>
+</header>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <img src="pics/rocking_horse.png" height="60" />
+  &nbsp;
+  <a class="navbar-brand" href="#">Epic Toys</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link aws_get" href="#" data-toggle="modal" data-target="#contacts-table">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link aws_delete" href="#">Shipping</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About us</a>
+      </li>
+    </ul>
+    <form class="form-inline mt-2 mt-md-0">
+        <a href="#" id="menu-chat" data-toggle="modal" data-target="#exampleModal">
+            <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-gear-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 0 0-5.86 2.929 2.929 0 0 0 0 5.858z"/>
+        </svg>
+        </a>
+    &nbsp;&nbsp;
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+    </form>
+  </div>
+</nav>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+    <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+  </ol>  <div class="carousel-inner">
+    <div class="carousel-item active" data-interval="5000">
+        <img src="pics/carousel-01.jpg" class="d-block w-100" alt="carousel-01">
+    </div>
+    <div class="carousel-item" data-interval="5000">
+        <img src="pics/carousel-02.jpg" class="d-block w-100" alt="carousel-01">
+    </div>
+    <div class="carousel-item" data-interval="5000">
+        <img src="pics/carousel-03.jpg" class="d-block w-100" alt="carousel-01">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Routing Preferences</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Modal start -->
+            Please select a person:<br/>
+            <script>
+                for(const key of Object.keys(SC_list)) {
+                    var checked = (sc_username == key) ? 'checked' : '';
+                    document.write('<div class="input-group">');
+                    document.write('  <div class="input-group-prepend">');
+                    document.write('    <div class="input-group-text">');
+                    document.write('      <input type="radio" name="SC" data-alias="'+key+'" Value="'+SC_list[key]+'" '+checked+'>');
+                    document.write('    </div>');
+                    document.write('  </div>');
+                    document.write('  <input type="text" class="form-control" Value="'+SC_list[key]+'" readonly>');
+                    document.write('</div>');                   
+                }
+            </script>
+
+        <!-- Modal end -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="ChangeSC" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="contacts-table" tabindex="-1" aria-labelledby="contactTableLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="contactTableLabel">
+                    Initialized chats
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table id="classTable" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Contact Id</th>
+                            <th>Date created</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger delete-btn" data-dismiss="modal">
+                    Delete
+                </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="section-chat" id="section-chat">
+    <div class="chat-popup-header">
+        <strong>Demo Chat</strong>
+    </div>
+    <div id="root"></div>
+</section>
+
+<footer>
+    <div class="widget-container">
+        <div class="widget-container-value">
+            <button type="button" class="robotButton" id="widgetButton"></button>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

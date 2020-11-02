@@ -1,0 +1,23 @@
+.env
+.htaccess
+
+vendor/*
+node_modules/*
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Local History for Visual Studio Code
+.history/
+
+.idea/*
+
+# General macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+__MACOSX/*
