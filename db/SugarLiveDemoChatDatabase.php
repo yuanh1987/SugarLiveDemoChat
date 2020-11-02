@@ -28,8 +28,17 @@ class SugarLiveDemoChatDatabase
     }
 
     public function delete($chat = null){
-        $statement = $this->conn->prepare('DELETE from chat where contact_agent=?');
-        $statement->execute([$chat->agent]);
+        $params[] = $chat->agent;
+        $sql = 'DELETE from chat where contact_agent=?';
+
+        // Delete only specific record if we have a contact_id
+        if (isset($chat->contact_id)) {
+            $params[] = $chat->contact_id;
+            $sql .= ' AND contact_id=?';
+        }
+
+        $statement = $this->conn->prepare($sql);
+        $statement->execute($params);
     }
 
     public function __destruct() {

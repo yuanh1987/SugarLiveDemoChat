@@ -42,6 +42,14 @@ switch ($_SERVER['REQUEST_METHOD']) {
         break;
     case 'DELETE':
         {
+
+            // UI close chat will trigger delete only for that specific contact chat id
+            if (isset($_GET) && !empty($_GET['contact_id'])) {
+                $chat->contact_id = $_GET['contact_id'];
+                $db->delete($chat);
+                return;
+            }
+
             $connect_client = new Aws\Connect\ConnectClient([
                 'version' => 'latest',
                 'region' => $_ENV['AWS_DEFAULT_REGION'],
@@ -54,6 +62,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
                 echo 'You don\'t have any open contacts.' . "\n";
             }
 
+            // Delete all initialized chats for specific agent
             if (!empty($chat->agent)) {
                 $db->delete($chat);
                 echo 'Record deleted successfully';

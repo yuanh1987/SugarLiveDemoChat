@@ -124,6 +124,14 @@ function successHandler(chatSession) {
     window.chatSession = chatSession;
     $('#section-chat').fadeIn(400);
     chatSession.onChatDisconnected(function(data) {
+        debugger;
+        $.ajax({
+            method: "DELETE",
+            url: `aws-be.php?contact_id=${chatSession.contactId}`,
+        })
+            .done(function( msg ) {
+            });
+
         $('#section-chat').hide('slide');
         delete window.chatSession;
 
