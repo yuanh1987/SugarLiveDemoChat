@@ -40,11 +40,16 @@
     justify-content: flex-end;
     bottom: 0;
     right: 0;
+    flex-direction: row-reverse;
 }
 
 .widget-container-value {
-    position: absolute;
+    position: relative;
     padding: .75rem;
+}
+
+.ecw-launcher-container {
+    display: flex;
 }
 
 #widgetButton {
@@ -60,6 +65,54 @@
     border: none;
     width: 52px;
     height: 52px;
+}
+
+.ecw-close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 .25rem 0 0;
+}
+
+.x-button {
+    padding: 3px;
+    box-shadow: 1px 3px 5px 0.5px rgba(0,0,0,.3);
+    background-color: #d3d3d3;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.launcher-welcome {
+    display: flex;
+    position: relative;
+    background-color: #fff;
+    border-radius: .625rem;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,.4);
+    max-width: 300px;
+    cursor: pointer;
+    margin-bottom: 9px;
+}
+
+.launcher-welcome-side {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    right: -10px;
+    bottom: 10px;
+    background-color: inherit;
+    transform: translateX(-6px) rotate(45deg);
+    pointer-events: none;
+    box-shadow: 2px -2px 2px 0 rgba(0, 0, 0, .2);
+}
+
+.launcher-welcome-text {
+    white-space: nowrap;
+    padding: 1rem;
+    max-width: 100%;
+    font-size: 16px;
+    white-space: normal;
 }
 
 footer {
